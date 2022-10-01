@@ -14,22 +14,50 @@ public class Weapon : MonoBehaviour
     public Transform bulletPos;//B44 발사구현
     public GameObject bullet;//B44 발사구현
 
+    public GameObject eventsys;
+    public GameObject Gun;
 
 
 
-    public int maxAmmo; //B44 재장전구현
-    public int curAmmo; //B44 재장전구현
+
+    public float maxAmmo; //B44 재장전구현
+    public float curAmmo; //B44 재장전구현
+    public float oneAmmo; //B44 재장전구현
+
+    public Animator anim;
+
+    public void Awake()
+    {
+        UI UI = eventsys.GetComponent<UI>();
+        maxAmmo += UI.Addammo;
+        curAmmo += UI.Addammo;
+
+    }
+
+
+
     // Start is called before the first frame update
 
     public void Use()                   //B43 공격로직(코루틴)
     {
-        if (type == Type.Range && curAmmo > 0) //B44 발사구현 
+        if (type == Type.Range && curAmmo > oneAmmo) //B44 발사구현 
         {
-            curAmmo--;
+            curAmmo -= oneAmmo;
             StartCoroutine("Shot");
         }
     }
 
+
+    void Reload()
+    {
+        if (type == Type.Range)
+        {
+            if (curAmmo < maxAmmo)
+                curAmmo += Time.deltaTime;
+            else
+                curAmmo = maxAmmo;
+        }
+    }
     IEnumerator Swing() //B43 공격로직(코루틴)
     {
         //1
@@ -68,6 +96,6 @@ public class Weapon : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        Reload();
     }
 }

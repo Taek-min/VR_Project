@@ -179,7 +179,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 5435038493645683278}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cfe7779f8f6383b47950b7d14b30e527, type: 3}
+  m_Script: {fileID: 11500000, guid: 31f5d35c32a59904e9ac6fc3bcd635bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 10
+  type: 0
+  damage: 0
+  rate: 0
+  meleeArea: {fileID: 0}
+  trailEffect: {fileID: 0}
+  bulletPos: {fileID: 0}
+  bullet: {fileID: 0}
+  eventsys: {fileID: 0}
+  maxAmmo: 0
+  curAmmo: 0

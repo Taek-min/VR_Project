@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 614380043477891308}
   - component: {fileID: 7747788607144648333}
   - component: {fileID: 8551347279669295850}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: BulletSubMachineGun
   m_TagString: Bullet
   m_Icon: {fileID: 0}
@@ -28,8 +28,9 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7425716158294600777}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 2, z: 0}
+  m_LocalPosition: {x: 0, y: 2, z: -0.4}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -46,6 +47,7 @@ TrailRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 0
   m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 0
@@ -83,8 +85,8 @@ TrailRenderer:
       serializedVersion: 2
       m_Curve:
       - serializedVersion: 3
-        time: 0
-        value: 0.27142715
+        time: 0.0047302246
+        value: 0.95747375
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -168,7 +170,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.3
+  m_Radius: 0.8
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &8551347279669295850
 MonoBehaviour:
@@ -179,7 +181,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 7425716158294600777}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cfe7779f8f6383b47950b7d14b30e527, type: 3}
+  m_Script: {fileID: 11500000, guid: 5156f0e5be4b9cd42a79e56e1ec4155a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 20
+  damage: 10
+  BulletTimer: 5
+  isDestroy: 1
+  isMelee: 0
+  isRock: 0
+  Fire: 0
+  eventsys: {fileID: 2700829690155889863, guid: 1df2e1ae86c48ee4887d14fa2f5417e8, type: 3}

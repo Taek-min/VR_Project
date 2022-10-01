@@ -1,0 +1,45 @@
+# List of SDK dependencies of this app, this information is also included in an encrypted form in the APK.
+# For more information visit: https://d.android.com/r/tools/dependency-metadata
+
+library {
+  maven_library {
+    artifactId: "OVRPlugin"
+  }
+  digests {
+    sha256: "B\204\025Y\342\334\207b\277\243\031\320\n\026\356c \324\222\212\035&\245h\"\307D1\321\265j\256"
+  }
+}
+library {
+  maven_library {
+    artifactId: "InteractionSdk"
+  }
+  digests {
+    sha256: "\216-\311p\362\267\263\247\335L\b\'\326=\033\212Y\024O\353\324\320~\274\320\260\024\264?\251$S"
+  }
+}
+library {
+  digests {
+    sha256: "r\244\221\264\237\365B\332L+F\314\366@(\016\020\333\277\275\254\307\210\214\a)m\313\364|T\202"
+  }
+}
+library {
+  digests {
+    sha256: "g\264\262!\355N-\251\267\003\336\000\230\320\303Zb\207e\331C\362x\206\364&q\275\301\270T\211"
+  }
+}
+library_dependencies {
+}
+library_dependencies {
+  library_index: 1
+}
+library_dependencies {
+  library_index: 2
+}
+library_dependencies {
+  library_index: 3
+}
+module_dependencies {
+  module_name: "base"
+  dependency_index: 2
+  dependency_index: 3
+}

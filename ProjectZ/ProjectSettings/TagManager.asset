@@ -14,6 +14,11 @@ TagManager:
   - Enemy
   - Fire
   - FireGun
+  - EnemyBullet
+  - Spawn
+  - UIButton
+  - RoomLight
+  - Grenade
   layers:
   - Default
   - TransparentFX
@@ -21,8 +26,8 @@ TagManager:
   - 
   - Water
   - UI
-  - 
-  - 
+  - Player
+  - Wall
   - Floor
   - PlayerBullet
   - 
@@ -30,8 +35,8 @@ TagManager:
   - 
   - Enemy
   - EnemyDead
-  - 
-  - 
+  - EnemyBullet
+  - Spawn
   - 
   - 
   - 
