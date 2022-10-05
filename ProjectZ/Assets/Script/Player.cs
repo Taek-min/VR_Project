@@ -11,8 +11,8 @@ public class Player : MonoBehaviour
     public float DodgeSpeed;
 
     public float DamageCoolTime = 1;
-    float hAxis;
-    float vAxis;
+    protected float hAxis;
+    protected float vAxis;
     
     protected Vector3 moveVec;
     protected Vector3 dodgeVec;

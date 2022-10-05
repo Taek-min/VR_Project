@@ -15,7 +15,7 @@ public class EnemyBox : Enemy
     {
         rigid = GetComponent<Rigidbody>();
         boxCollider = GetComponent<BoxCollider>();
-        meshs = GetComponentsInChildren<MeshRenderer>();//B46 피격로직 //GetComponent -> GetComponentInChildren 수정 B48 오브젝트 추가
+        meshs = GetComponentsInChildren<Renderer>();//B46 피격로직 //GetComponent -> GetComponentInChildren 수정 B48 오브젝트 추가
         nav = GetComponent<NavMeshAgent>();
         anim = GetComponentInChildren<Animator>();// B48 애니매이션
 

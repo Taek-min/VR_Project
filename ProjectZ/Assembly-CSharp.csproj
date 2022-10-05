@@ -239,6 +239,8 @@
     <Compile Include="Assets\Oculus\SampleFramework\Usage\SpatialAnchor\Scripts\AnchorUIManager.cs" />
     <Compile Include="Assets\Oculus\SampleFramework\Usage\Passthrough\Scripts\SelectivePassthroughExperience.cs" />
     <Compile Include="Assets\Oculus\SampleFramework\Usage\HandsTrainExample\Scripts\TrackSegment.cs" />
+    <Compile Include="Assets\Script\LevelSystem.cs" />
+    <Compile Include="Assets\Script\ExpObject.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\20 Logos PSD\Fonts\chunkfiveex\SIL Open Font License 1.1.txt" />

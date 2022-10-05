@@ -74,6 +74,8 @@ public class OculesPlayer : Player
     }
     private void GetKeyInput()
     {
+        hAxis = Input.GetAxisRaw("Horizontal");
+        vAxis = Input.GetAxisRaw("Vertical");
         moveDown = OVRInput.Get(OVRInput.Touch.PrimaryThumbstick);
         dashDown = Input.GetButtonDown("Jump") || OVRInput.GetDown(OVRInput.Button.PrimaryThumbstick);
         shotDown = Input.GetButton("Fire1") || OVRInput.Get(OVRInput.Button.SecondaryIndexTrigger);    //B43 공격실행
@@ -263,6 +265,23 @@ public void CamVec()
         //GetOVRInput();
         GetKeyInput();
         Move();
+        {
+            float mouseX = 0;
+            float mouseY = 0;
+            float mouseSpeed = 5.0f;
+
+
+            mouseX += Input.GetAxis("Mouse X") * mouseSpeed;
+            //mouseX += Input.GetAxis("Mouse X");
+            mouseY += Input.GetAxis("Mouse Y") * mouseSpeed;
+            //mouseY += Input.GetAxis("Mouse Y");
+            mouseY = Mathf.Clamp(mouseY, -90, 90);    //고개 돌리기 각도 제한
+            cam.eulerAngles += new Vector3(-mouseY, mouseX, 0);
+        }
+        {
+            Vector3 mv = new Vector3(hAxis, 0, vAxis);
+            transform.Translate(cam.transform.TransformDirection(mv) * Time.deltaTime * speed);
+        }
         Swap();
         Dash();
         //Jump();

@@ -19,7 +19,7 @@ public class Enemy : MonoBehaviour
 
     protected Rigidbody rigid;
     protected BoxCollider boxCollider;
-    protected MeshRenderer[] meshs;//B46 피격로직
+    protected Renderer[] meshs;//B46 피격로직
     protected NavMeshAgent nav;// B48 네비게이션
     protected Animator anim;// B48 애니매이션
 
@@ -48,7 +48,7 @@ public class Enemy : MonoBehaviour
     {
         rigid = GetComponent<Rigidbody>();
         boxCollider = GetComponent<BoxCollider>();
-        meshs = GetComponentsInChildren<MeshRenderer>();//B46 피격로직 //GetComponent -> GetComponentInChildren 수정 B48 오브젝트 추가
+        meshs = GetComponentsInChildren<Renderer>();//B46 피격로직 //GetComponent -> GetComponentInChildren 수정 B48 오브젝트 추가
         nav = GetComponent<NavMeshAgent>();
         anim = GetComponentInChildren<Animator>();// B48 애니매이션
 
@@ -88,18 +88,18 @@ public class Enemy : MonoBehaviour
 
     IEnumerator OnDamage(Vector3 reactVec, bool isGrenade)//B46 피격로직
     {
-        foreach(MeshRenderer mesh in meshs)
+        foreach(Renderer mesh in meshs)
             mesh.material.color = Color.red;
         yield return new WaitForSeconds(0.1f);
 
         if (curHealth > 0)
         {
-            foreach (MeshRenderer mesh in meshs)
+            foreach (Renderer mesh in meshs)
                 mesh.material.color = Color.white;
         }
         else
         {
-            foreach (MeshRenderer mesh in meshs)
+            foreach (Renderer mesh in meshs)
                 mesh.material.color = Color.gray;
             gameObject.layer = 14;  //Layer를 EnemyDead로 바꿈
             boxCollider.enabled = false;
