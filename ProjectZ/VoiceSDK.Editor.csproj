@@ -9,7 +9,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{13AA272C-4E0E-FA48-DF07-34AA554BC34B}</ProjectGuid>
+    <ProjectGuid>{A0E2D3DB-9468-14E1-750B-490F43890F7D}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>VoiceSDK.Editor</AssemblyName>
@@ -965,15 +965,15 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="VoiceSDK.Runtime.csproj">
-      <Project>{0EAC59A2-D043-4FFC-FE16-0252DCA32F7A}</Project>
+      <Project>{D27F3E94-8D08-25C5-0052-4D73753EECDC}</Project>
       <Name>VoiceSDK.Runtime</Name>
     </ProjectReference>
     <ProjectReference Include="Facebook.WitAI.csproj">
-      <Project>{A6463B9A-032F-DDD7-EE1B-875C2533A3CC}</Project>
+      <Project>{4BDEF4DC-92EB-44B9-5B3C-59C49159473A}</Project>
       <Name>Facebook.WitAI</Name>
     </ProjectReference>
     <ProjectReference Include="Facebook.Wit.Editor.csproj">
-      <Project>{4958D99A-01F2-D105-4036-8842A584A42C}</Project>
+      <Project>{A63D8822-DFF9-D947-377A-FEC5FF10B57A}</Project>
       <Name>Facebook.Wit.Editor</Name>
     </ProjectReference>
   </ItemGroup>

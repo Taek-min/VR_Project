@@ -9,7 +9,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{0EAC59A2-D043-4FFC-FE16-0252DCA32F7A}</ProjectGuid>
+    <ProjectGuid>{D27F3E94-8D08-25C5-0052-4D73753EECDC}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>VoiceSDK.Runtime</AssemblyName>
@@ -704,11 +704,11 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="AssistantCoreSDKRuntime.csproj">
-      <Project>{063A90CA-A506-9123-8FE1-77A2CBE0A883}</Project>
+      <Project>{92DEADEB-4801-C2E6-3012-289EB517B2FE}</Project>
       <Name>AssistantCoreSDKRuntime</Name>
     </ProjectReference>
     <ProjectReference Include="Facebook.WitAI.csproj">
-      <Project>{A6463B9A-032F-DDD7-EE1B-875C2533A3CC}</Project>
+      <Project>{4BDEF4DC-92EB-44B9-5B3C-59C49159473A}</Project>
       <Name>Facebook.WitAI</Name>
     </ProjectReference>
   </ItemGroup>

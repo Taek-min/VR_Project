@@ -11,7 +11,7 @@ public class UI : MonoBehaviour
     public GameObject MainUI;
     public GameObject MainGame;
     public GameObject OptionUI;
-    public GameObject PowerUI;
+    public GameObject PassiveUI;
 
     public int passivePoint = 10;
     public Text PointText;
@@ -67,7 +67,7 @@ public class UI : MonoBehaviour
     public void OnClick_InPower()
     {
         MainUI.SetActive(false);
-        PowerUI.SetActive(true);
+        PassiveUI.SetActive(true);
     }
 
     public void OnClick_Exit()
@@ -85,7 +85,7 @@ public class UI : MonoBehaviour
     public void OnClick_PowerExit()
     {
         MainUI.SetActive(true);
-        PowerUI.SetActive(false);
+        PassiveUI.SetActive(false);
     }
     public void OnClick_PowerPointReSet()
     {

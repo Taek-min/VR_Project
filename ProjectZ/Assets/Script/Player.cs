@@ -51,6 +51,8 @@ public class Player : MonoBehaviour
     public float ammo; //B42 변수선언
     public int coin; //B42 변수선언
     public float heart; //B42 변수선언
+    public int exp;     //경험치
+    public int level;   //레벨
     public int hasGrenades; //B42 변수선언
 
     public float maxAmmo;//B42 변수생성

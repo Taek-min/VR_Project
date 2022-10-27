@@ -9,7 +9,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{4958D99A-01F2-D105-4036-8842A584A42C}</ProjectGuid>
+    <ProjectGuid>{A63D8822-DFF9-D947-377A-FEC5FF10B57A}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Facebook.Wit.Editor</AssemblyName>
@@ -984,7 +984,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="Facebook.WitAI.csproj">
-      <Project>{A6463B9A-032F-DDD7-EE1B-875C2533A3CC}</Project>
+      <Project>{4BDEF4DC-92EB-44B9-5B3C-59C49159473A}</Project>
       <Name>Facebook.WitAI</Name>
     </ProjectReference>
   </ItemGroup>
