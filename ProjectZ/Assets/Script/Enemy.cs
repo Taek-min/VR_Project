@@ -27,6 +27,7 @@ public class Enemy : MonoBehaviour
 
     public GameObject playerObj;
     public GameObject selfObject;
+    public int expPoint;
 
     public Transform enemyUI;
 
@@ -111,7 +112,19 @@ public class Enemy : MonoBehaviour
             reactVec = reactVec.normalized;
             reactVec += Vector3.up;
             rigid.AddForce(reactVec * 5, ForceMode.Impulse);
-            Destroy(gameObject, 4);//4초이따 죽음
+            
+            yield return new WaitForSeconds(4);
+            //3. ExpSystem 컴포넌트 찾기
+            //2. 위치와 expPoint 전달
+            //1. ExpObject 생성
+            Debug.Log("Expppppppppp");
+            ExpSystem.instance.CreateExp(expPoint, gameObject.transform.position);
+            Destroy(gameObject);
+
+            //a public으로 컴포넌트 넣기
+            //b gameobject.find("ObjectName").getComponent<>()
+            //c GameObject.FindObjectOfType<ExpSystem>().
+            //d GameObject.FindGameObjectWithTag("TagName")    
         }
     }
 

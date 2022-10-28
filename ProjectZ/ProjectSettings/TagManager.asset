@@ -19,6 +19,7 @@ TagManager:
   - UIButton
   - RoomLight
   - Grenade
+  - ExpObject
   layers:
   - Default
   - TransparentFX
@@ -37,7 +38,7 @@ TagManager:
   - EnemyDead
   - EnemyBullet
   - Spawn
-  - 
+  - ExpObject
   - 
   - 
   - 
