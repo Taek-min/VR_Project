@@ -5,8 +5,8 @@ using UnityEngine;
 public class BossRock : Bullet
 {
     Rigidbody rigid;
-    float angularPower = 2;
-    float scaleValue = 0.1f;
+    public float angularPower = 2;
+    public float scaleValue = 0.1f;
     bool isShoot;
     // Start is called before the first frame update
     void Awake()
@@ -24,8 +24,8 @@ public class BossRock : Bullet
     {
         while(!isShoot)
         {
-            angularPower += 0.02f;
-            scaleValue += 0.005f;
+            angularPower += Time.deltaTime * 0.2f;
+            scaleValue += Time.deltaTime * 0.5f;
             transform.localScale = Vector3.one * scaleValue;
             rigid.AddTorque(transform.right * angularPower, ForceMode.Acceleration);
             yield return null;

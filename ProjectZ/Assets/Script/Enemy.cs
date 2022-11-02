@@ -58,9 +58,9 @@ public class Enemy : MonoBehaviour
     }
 
 
-    private void OnTriggerEnter(Collider other)//B46
+    protected void OnTriggerEnter(Collider other)//B46
     {
-        if (other.tag == "Bullet")
+        if (other.tag == "Bullet" && !isDead)
         {
             Bullet bullet = other.GetComponent<Bullet>();
             UI UI = eventsys.GetComponent<UI>();
@@ -91,10 +91,10 @@ public class Enemy : MonoBehaviour
     {
         foreach(Renderer mesh in meshs)
             mesh.material.color = Color.red;
-        yield return new WaitForSeconds(0.1f);
 
         if (curHealth > 0)
         {
+            yield return new WaitForSeconds(0.2f);
             foreach (Renderer mesh in meshs)
                 mesh.material.color = Color.white;
         }
@@ -102,27 +102,30 @@ public class Enemy : MonoBehaviour
         {
             foreach (Renderer mesh in meshs)
                 mesh.material.color = Color.gray;
-            gameObject.layer = 14;  //Layer를 EnemyDead로 바꿈
-            boxCollider.enabled = false;
+            gameObject.layer = LayerMask.NameToLayer("EnemyDead");  //Layer를 EnemyDead로 바꿈
             isDead = true;
             isChase = false;// B48 애니매이션
             nav.enabled = false;// B48 애니매이션
             anim.SetTrigger("doDie");// B48 애니매이션
 
+            Vector3 deadPos = new Vector3(transform.position.x, transform.position.y, transform.position.z);
             reactVec = reactVec.normalized;
             reactVec += Vector3.up;
             rigid.AddForce(reactVec * 5, ForceMode.Impulse);
-            
-            yield return new WaitForSeconds(4);
+            Debug.Log("죽음!!!!!!!!!!!!!!!!");
+
+            yield return new WaitForSeconds(0.2f);
+            Debug.Log("코루틴 2초 대기 끝");
             //3. ExpSystem 컴포넌트 찾기
             //2. 위치와 expPoint 전달
             //1. ExpObject 생성
             Debug.Log("Expppppppppp");
-            ExpSystem.instance.CreateExp(expPoint, gameObject.transform.position);
+            Debug.Log("죽은 좌표 : " + deadPos);
+            ExpSystem.instance.CreateExp(expPoint, deadPos);
             Destroy(gameObject);
 
             //a public으로 컴포넌트 넣기
-            //b gameobject.find("ObjectName").getComponent<>()
+            //b Gameobject.Find("ObjectName").getComponent<>()
             //c GameObject.FindObjectOfType<ExpSystem>().
             //d GameObject.FindGameObjectWithTag("TagName")    
         }

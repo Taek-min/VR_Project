@@ -5,6 +5,7 @@ namespace PolygonArsenal
 {
     public class PolygonProjectileScript : MonoBehaviour
     {
+        public string[] layerMaskList;
         public GameObject impactParticle;
         public GameObject projectileParticle;
         public GameObject muzzleParticle;
@@ -16,6 +17,8 @@ namespace PolygonArsenal
 
         protected virtual void Start()
         {
+            int layerMask = LayerMask.GetMask(layerMaskList);
+            Debug.Log("Layer 값 : " + layerMask);
             projectileParticle = Instantiate(projectileParticle, transform.position, transform.rotation) as GameObject;
             projectileParticle.transform.parent = transform;
             if (muzzleParticle)

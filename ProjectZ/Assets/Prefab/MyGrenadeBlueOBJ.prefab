@@ -46,6 +46,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf425a13499349245a84d8ccafba80ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  layerMaskList:
+  - Floor
+  - Wall
+  - Enemy
   impactParticle: {fileID: 1743926635248968, guid: 106913ce1654d0b438bc171bad4fd783, type: 3}
   projectileParticle: {fileID: 1077314475975830, guid: 54d50b7ac858bb64488358a8c7731334, type: 3}
   muzzleParticle: {fileID: 1535879545770036, guid: 2cf07f47d48b32c41bbfa08c86426e38, type: 3}
@@ -82,5 +86,5 @@ SphereCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.15
+  m_Radius: 0.25
   m_Center: {x: 0, y: 0, z: 0}

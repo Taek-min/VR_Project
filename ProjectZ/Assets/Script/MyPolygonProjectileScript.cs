@@ -8,7 +8,7 @@ public class MyPolygonProjectileScript : PolygonProjectileScript
     public GameObject rangeOfAttack;
     public float DestroyTime = 5.0f;
     public bool hasDestroyTime = false;
-
+    
     protected override void Start()
     {
         base.Start();
@@ -32,7 +32,7 @@ public class MyPolygonProjectileScript : PolygonProjectileScript
 
         float dist = transform.GetComponent<Rigidbody>().velocity.magnitude * Time.deltaTime;
 
-        if (Physics.SphereCast(transform.position, rad, dir, out hit, dist))
+        if (Physics.SphereCast(transform.position, rad, dir, out hit, dist, LayerMask.GetMask(layerMaskList)))
         {
             transform.position = hit.point + (hit.normal * collideOffset);
 

@@ -41,19 +41,8 @@ public class ExpSystem : MonoBehaviour
     {
 
     }
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.tag == "ExpObject")
-        {
-            ExpObject expObj = other.gameObject.GetComponent<ExpObject>();
-            if (expObj != null)
-                CalcExp(expObj.expPoint);
-            else
-                Debug.Log("ExpObject가 없습니다.");
-        }
-    }
 
-    private void CalcExp(int expPoint)
+    public void CalcExp(int expPoint)
     {
         int expBuf = expNowVal + expPoint;
         if (expBuf < expMaxVal)
