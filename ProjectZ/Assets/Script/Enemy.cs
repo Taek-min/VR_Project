@@ -2,6 +2,7 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.AI;
+using System.Collections.Generic;
 
 public class Enemy : MonoBehaviour
 {
@@ -36,6 +37,8 @@ public class Enemy : MonoBehaviour
 
     //HP 슬라이더
     public Slider hpSlider;
+
+    protected int hitStack = 0;
 
     public void EnemyUICam()
     { 
@@ -94,9 +97,15 @@ public class Enemy : MonoBehaviour
 
         if (curHealth > 0)
         {
-            yield return new WaitForSeconds(0.2f);
-            foreach (Renderer mesh in meshs)
-                mesh.material.color = Color.white;
+            hitStack++;
+            yield return new WaitForSeconds(0.5f);
+            Debug.Log("pushhhhhhhhhhhhhhhhhh");
+            hitStack--;
+            if (hitStack == 0)
+                foreach (Renderer mesh in meshs)
+                {
+                    mesh.material.color = Color.white;
+                }
         }
         else
         {
@@ -114,14 +123,17 @@ public class Enemy : MonoBehaviour
             rigid.AddForce(reactVec * 5, ForceMode.Impulse);
             Debug.Log("죽음!!!!!!!!!!!!!!!!");
 
-            yield return new WaitForSeconds(0.2f);
+            yield return new WaitForSeconds(2f);
             Debug.Log("코루틴 2초 대기 끝");
             //3. ExpSystem 컴포넌트 찾기
             //2. 위치와 expPoint 전달
             //1. ExpObject 생성
             Debug.Log("Expppppppppp");
             Debug.Log("죽은 좌표 : " + deadPos);
-            ExpSystem.instance.CreateExp(expPoint, deadPos);
+            if(expPoint != 0)
+            {
+                ExpSystem.instance.CreateExp(expPoint, deadPos);
+            }
             Destroy(gameObject);
 
             //a public으로 컴포넌트 넣기

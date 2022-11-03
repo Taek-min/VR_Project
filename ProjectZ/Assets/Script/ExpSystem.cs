@@ -42,16 +42,18 @@ public class ExpSystem : MonoBehaviour
 
     }
 
-    public void CalcExp(int expPoint)
+    public bool CalcExp(int expPoint)
     {
         int expBuf = expNowVal + expPoint;
         if (expBuf < expMaxVal)
         {   // 경험치가 Max수치에 미달이면 현재 경험치 상승
             RiseExp(expPoint);
+            return true;
         }
         else
         {   // 경험치가 Max수치를 넘어가면 레벨업
             RiseLevel(expPoint);
+            return false;
         }
     }
 

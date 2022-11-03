@@ -15,24 +15,10 @@ public class ExpObject : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "ExpObject")
+        if (other.tag == "Player")
         {
-            ExpObject expObj = other.gameObject.GetComponent<ExpObject>();
-            if (expObj != null)
-                ExpSystem.instance.CalcExp(expObj.expPoint);
-            else
-                Debug.Log("ExpObject가 없습니다.");
+            ExpSystem.instance.CalcExp(expPoint);
+            Destroy(gameObject);
         }
-    }
-    // Start is called before the first frame update
-    void Start()
-    {
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
     }
 }
