@@ -533,6 +533,7 @@
 "Assets/Script/Item.cs"
 "Assets/Script/Laser.cs"
 "Assets/Script/Missile.cs"
+"Assets/Script/MyPixelArsenalProjectileScript.cs"
 "Assets/Script/MyPolygonProjectileScript.cs"
 "Assets/Script/OculesController.cs"
 "Assets/Script/OculesPlayer.cs"

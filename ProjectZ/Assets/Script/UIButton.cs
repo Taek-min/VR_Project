@@ -5,19 +5,13 @@ using UnityEngine.UI;
 
 public class UIButton : MonoBehaviour
 {
+    //public UI VRUISys;
+    public Sprite imageNomal;
+    public Sprite imageHiglight;
+    public Image image;
 
-    public UI VRUISys;
-    //public Button btn;
-
-    // Start is called before the first frame update
-    void Start()
+    public void On_HoverButton()
     {
-        
-    }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }

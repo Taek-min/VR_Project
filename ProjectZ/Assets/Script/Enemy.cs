@@ -38,8 +38,6 @@ public class Enemy : MonoBehaviour
     //HP 슬라이더
     public Slider hpSlider;
 
-    protected int hitStack = 0;
-
     public void EnemyUICam()
     { 
         //적 UI가 플레이어(카메라)를 바라봄 
@@ -73,7 +71,7 @@ public class Enemy : MonoBehaviour
             Vector3 reactVec = transform.position - other.transform.position;
             if(!bullet.isPenetration)
                 Destroy(other.gameObject);
-            StartCoroutine(OnDamage(reactVec, false));//B46 피격로직
+            StartCoroutineOnDamage(reactVec, false);//B46 피격로직
         }
     }
 
@@ -84,12 +82,20 @@ public class Enemy : MonoBehaviour
             Bullet Fire = other.GetComponent<Bullet>();
             curHealth -= Fire.Fire;
             Vector3 reactVec = transform.position - other.transform.position;
-            StartCoroutine(OnDamage(reactVec, false));//B46 피격로직
+            StartCoroutineOnDamage(reactVec, false);//B46 피격로직
         }
     }
 
+    public void StartCoroutineOnDamage(Vector3 reactVec, bool isGrenade)
+    {
+        if (coA != null)
+        {
+            StopCoroutine(coA);
+        }
 
-
+        coA = StartCoroutine(OnDamage(reactVec, isGrenade));
+    }
+    Coroutine coA;
     IEnumerator OnDamage(Vector3 reactVec, bool isGrenade)//B46 피격로직
     {
         foreach(Renderer mesh in meshs)
@@ -97,15 +103,11 @@ public class Enemy : MonoBehaviour
 
         if (curHealth > 0)
         {
-            hitStack++;
             yield return new WaitForSeconds(0.5f);
-            Debug.Log("pushhhhhhhhhhhhhhhhhh");
-            hitStack--;
-            if (hitStack == 0)
-                foreach (Renderer mesh in meshs)
-                {
-                    mesh.material.color = Color.white;
-                }
+            foreach (Renderer mesh in meshs)
+            {
+                mesh.material.color = Color.white;
+            }
         }
         else
         {
@@ -123,7 +125,7 @@ public class Enemy : MonoBehaviour
             rigid.AddForce(reactVec * 5, ForceMode.Impulse);
             Debug.Log("죽음!!!!!!!!!!!!!!!!");
 
-            yield return new WaitForSeconds(2f);
+            //yield return new WaitForSeconds(2f);
             Debug.Log("코루틴 2초 대기 끝");
             //3. ExpSystem 컴포넌트 찾기
             //2. 위치와 expPoint 전달
@@ -134,7 +136,7 @@ public class Enemy : MonoBehaviour
             {
                 ExpSystem.instance.CreateExp(expPoint, deadPos);
             }
-            Destroy(gameObject);
+            Destroy(gameObject, 2f);
 
             //a public으로 컴포넌트 넣기
             //b Gameobject.Find("ObjectName").getComponent<>()
@@ -147,7 +149,7 @@ public class Enemy : MonoBehaviour
     {
         curHealth -= 100;
         Vector3 reactVec = transform.position - explosionPos;
-        StartCoroutine(OnDamage(reactVec, true));
+        StartCoroutineOnDamage(reactVec, true);
     }
 
     void ChaseStart()// B48 애니매이션
