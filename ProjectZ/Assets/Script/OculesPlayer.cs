@@ -220,10 +220,10 @@ public class OculesPlayer : Player
     {
         if (heart <= 0)
         {
+            eventsys.GetComponent<UI>().LevelUpUI.SetActive(false);
             gameObj.SetActive(false);
             DeadUI.SetActive(true);
-            
-            
+
             RightHand.SetActive(false);
             LeftHand.SetActive(false);
 
@@ -231,15 +231,13 @@ public class OculesPlayer : Player
             gameObject.transform.position = new Vector3(0, 4, -9);
             gameObject.transform.rotation = Quaternion.Euler(0, 0, 0);
         }
-    }
-    
-public void CamVec()
+    }    
+    public void CamVec()
     {
         forwards.transform.rotation = cam.transform.rotation;
         forwards.transform.rotation = Quaternion.Euler(forwards.rotation.eulerAngles.x, forwards.transform.rotation.eulerAngles.y - this.transform.rotation.eulerAngles.y, forwards.rotation.eulerAngles.z);
         headingForward = forwards.transform.forward;
         headingRight = forwards.transform.right;
-
     }
     protected override void Move()
     {
@@ -281,6 +279,15 @@ public void CamVec()
         {
             Vector3 mv = new Vector3(hAxis, 0, vAxis);
             transform.Translate(cam.transform.TransformDirection(mv) * Time.deltaTime * speed);
+            if(Input.GetKeyDown(KeyCode.E))
+            {
+                DeadUI.SetActive(false);
+            }
+            if (Input.GetKeyDown(KeyCode.R))
+            {
+                DeadUI.SetActive(true);
+                Debug.Log("Å° ´©¸§");
+            }
         }
         Swap();
         Dash();

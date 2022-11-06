@@ -537,6 +537,7 @@
 "Assets/Script/OculesController.cs"
 "Assets/Script/OculesPlayer.cs"
 "Assets/Script/Orbit.cs"
+"Assets/Script/PassiveCheckList.cs"
 "Assets/Script/Player.cs"
 "Assets/Script/RangeOfAttack.cs"
 "Assets/Script/Spawn.cs"

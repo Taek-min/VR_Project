@@ -65,7 +65,8 @@ public class Enemy : MonoBehaviour
         {
             Bullet bullet = other.GetComponent<Bullet>();
             UI UI = eventsys.GetComponent<UI>();
-            Debug.Log(bullet.damage.ToString());
+            //Debug.Log(bullet.damage.ToString());
+            Debug.Log("damage*AddDamage: " + ((float)bullet.damage * (float)UI.AddDamage).ToString());
             curHealth -= bullet.damage + (bullet.damage * UI.AddDamage);
             Debug.Log("Range: " + curHealth);
             Vector3 reactVec = transform.position - other.transform.position;

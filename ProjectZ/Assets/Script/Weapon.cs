@@ -29,8 +29,8 @@ public class Weapon : MonoBehaviour
     public void Awake()
     {
         UI UI = eventsys.GetComponent<UI>();
-        maxAmmo += UI.Addammo;
-        curAmmo += UI.Addammo;
+        maxAmmo += UI.AddAmmo;
+        curAmmo += UI.AddAmmo;
 
     }
 

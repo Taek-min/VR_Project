@@ -11,6 +11,7 @@ public class ExpSystem : MonoBehaviour
 {
     // 싱글톤
     public static ExpSystem instance;
+    public UI ui;
 
     public int level;           // 현재 레벨
     public int expMaxVal;       // 최대 경험치값
@@ -63,6 +64,7 @@ public class ExpSystem : MonoBehaviour
         level++;
 
         RiseExp(expBuf);
+        ui.On_LevelUp();
 
         Debug.Log(level);
         testText[Level].text = level.ToString();

@@ -51,7 +51,7 @@ public class Laser : MonoBehaviour
     }
 
     // Update is called once per frame
-    private void FixedUpdate()
+    private void Update()
     {
         HitTarget();
         if (OVRInput.GetDown(OVRInput.Button.PrimaryIndexTrigger) || Input.GetButtonDown("Fire2"))
@@ -65,27 +65,28 @@ public class Laser : MonoBehaviour
     {
         RaycastHit hit;
         Ray ray = new Ray(transform.position, transform.forward);
-        if (Physics.Raycast(ray, out hit, layerMask))
+        if (!Physics.Raycast(ray, out hit, layerMask))
         {
-            //UIButton tag인지 확인한다.
-            if(hit.Equals(hitObject))
-            //기존에 hover중이던 버튼과 다르면 이미지를 원래대로 되돌린다.
-            //tag를 통해 무슨 버튼인지 확인한다. 일반, 패시브
-            //버튼의 이미지를 바꾼다.
-
-            hitObject = hit.transform.gameObject;
-            if (hitObject.CompareTag("UIButton"))
+            if(hitObject != null)
             {
-                hitObject.GetComponent<Image>().color = laserColor[1];
+                hitObject.GetComponent<UIButton>().Off_HoverBtn();
+                hitObject = null;
             }
+            return;
         }
-        else if(hitObject)
+
+        GameObject nowHitObject = hit.transform.gameObject;
+        if (nowHitObject.CompareTag("UIButton"))
         {
-            for (int i = 0; i < buttonList.Count; i++)
+            nowHitObject.GetComponent<UIButton>().On_HoverBtn();
+            if (hitObject != null && hitObject != nowHitObject)
             {
-                buttonList[i].GetComponent<Image>().color = laserColor[0];
+                hitObject.GetComponent<UIButton>().Off_HoverBtn();
             }
-            hitObject = null;
+            if (hitObject == null || hitObject != nowHitObject)
+            {
+                hitObject = nowHitObject;
+            }
         }
     }
 
