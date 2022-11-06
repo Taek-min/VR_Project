@@ -255,8 +255,9 @@ public class OculesPlayer : Player
             this.transform.Translate(r * pos.x);
             //testText.text = pos.ToString();
         }
-
     }
+
+    
     // Update is called once per frame
     public override void Update()
     {

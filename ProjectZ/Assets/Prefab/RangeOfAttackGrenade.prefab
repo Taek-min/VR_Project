@@ -45,7 +45,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5156f0e5be4b9cd42a79e56e1ec4155a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 100
+  damage: 50
   BulletTimer: 5
   isDestroy: 0
   isMelee: 0

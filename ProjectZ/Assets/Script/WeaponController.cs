@@ -41,6 +41,8 @@ public class WeaponController : MonoBehaviour
     public float curAmmo;
     //총탄 단위
     public float oneAmmo = 1.0f;
+    //패시브로 인한 상승값
+    public float psvAmmo;
     //장전 속도
     public float reloadSpeed = 1.0f;
 
@@ -92,6 +94,10 @@ public class WeaponController : MonoBehaviour
                     break;
                 }
         }
+    }
+    public void UpdateAmmo(float ammoVal)
+    {
+        maxAmmo += psvAmmo * ammoVal;
     }
 /*    public void SubGunAttack()
     {

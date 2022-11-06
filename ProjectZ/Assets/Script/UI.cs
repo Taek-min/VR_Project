@@ -14,6 +14,7 @@ public class UI : MonoBehaviour
     public GameObject PassiveUI;
     public GameObject LevelUpUI;
 
+
     public int passivePoint = 10;
     public int bufPassivePoint;
     public Text PointText;
@@ -22,6 +23,7 @@ public class UI : MonoBehaviour
 
     public List<PassiveCheckList> psvCheckLists;
     public List<PassiveCheckList> LevelpsvCheckLists;
+    public WeaponController[] wpControllerList;
 
 
     public int speedCnt = 0;
@@ -96,15 +98,19 @@ public class UI : MonoBehaviour
     {
         passivePoint = bufPassivePoint;
 
-        speedCnt = bufCntArr[(int)PsvType.speed];
-        damageCnt = bufCntArr[(int)PsvType.damage];
-        hpCnt = bufCntArr[(int)PsvType.hp];
-        ammoCnt = bufCntArr[(int)PsvType.ammo];
+        On_UpdatePsv();
+
+        speedCnt = bufCntArr[(int)PsvType.speed];   //player
+        damageCnt = bufCntArr[(int)PsvType.damage]; //bullet
+        hpCnt = bufCntArr[(int)PsvType.hp];         //player
+        ammoCnt = bufCntArr[(int)PsvType.ammo];     //wp
 
         AddSpeed = bufAddValArr[(int)PsvType.speed];
         AddDamage = bufAddValArr[(int)PsvType.damage];
         AddHP = bufAddValArr[(int)PsvType.hp];
         AddAmmo = bufAddValArr[(int)PsvType.ammo];
+
+        
 
         MainUI.SetActive(true);
         PassiveUI.SetActive(false);
@@ -128,7 +134,7 @@ public class UI : MonoBehaviour
     }
     public void OnClick_PowerPointReSet()
     {
-        //passivePoint = 10;
+        passivePoint = 10;
         bufPassivePoint = passivePoint;
         PointText.text = "ÀÜ¿© Æ÷ÀÎÆ® : " + bufPassivePoint.ToString();
 
@@ -244,6 +250,16 @@ public class UI : MonoBehaviour
         LevelUpUI.SetActive(true);
         LeftLaser.SetActive(true);
         OnClick_PowerPointLevelReSet();
+    }
+    public void On_UpdatePsv()
+    {
+        Player player = GameObject.Find("OVRPlayerController").GetComponent<Player>();
+        player.UpdateHp(bufAddValArr[(int)PsvType.hp] - AddHP);
+        player.UpdateSpeed(bufAddValArr[(int)PsvType.speed] - AddSpeed);
+        foreach(WeaponController wpController in wpControllerList)
+        {
+            wpController.UpdateAmmo(bufAddValArr[(int)PsvType.ammo] - AddAmmo);
+        }
     }
 
     // Update is called once per frame

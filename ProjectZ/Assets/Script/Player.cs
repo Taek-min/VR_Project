@@ -57,7 +57,7 @@ public class Player : MonoBehaviour
 
     public float maxAmmo;//B42 函荐积己
     public int maxCoin;//B42 函荐积己
-    public int maxHeart;//B42 函荐积己
+    public float maxHeart;//B42 函荐积己
     public int maxHasGrenades;//B42 函荐积己
 
 
@@ -570,6 +570,17 @@ public class Player : MonoBehaviour
         //equipWeapon = weapons[equipWeaponIndex].GetComponent<Weapon>();
         //weapons[equipWeaponIndex].gun.SetActive(true);
         weapons[equipWeaponIndex].GetComponent<Weapon>().Gun.SetActive(true);
+    }
+
+    public void UpdateHp(float hpVal)
+    {
+        heart += hpVal;
+        maxHeart += hpVal;
+    }
+
+    public void UpdateSpeed(float speedVal)
+    {
+        speed += speedVal;
     }
 
     public virtual void Update()
