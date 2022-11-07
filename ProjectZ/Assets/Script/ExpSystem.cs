@@ -49,8 +49,11 @@ public class ExpSystem : MonoBehaviour
     private void RiseExp(int expPoint)
     {   // 경험치가 상승하고 UI에 반영
         expNowVal += expPoint;
-        Debug.Log(expNowVal);
+        Debug.Log(expNowVal.ToString() + " " + expMaxVal.ToString());
         testText[Exp].text = expNowVal.ToString() + ", " + expMaxVal.ToString();
+        float expPersent = (float)expNowVal / (float)expMaxVal;
+        ui.expGageImage.rectTransform.sizeDelta = new Vector2(600*expPersent, 50);
+        Debug.Log("expPersent: " + expPersent.ToString());
     }
     private void RiseLevel(int expPoint)
     {   // 레벨이 상승하고 UI에 반영

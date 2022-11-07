@@ -56,7 +56,8 @@ public class Laser : MonoBehaviour
         HitTarget();
         if (OVRInput.GetDown(OVRInput.Button.PrimaryIndexTrigger) || Input.GetButtonDown("Fire2"))
         {
-            hitObject.GetComponent<Button>().onClick.Invoke();
+            if(hitObject != null)
+                hitObject.GetComponent<Button>().onClick.Invoke();
         }
 
     }

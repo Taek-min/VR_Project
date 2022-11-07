@@ -14,7 +14,6 @@ public class UI : MonoBehaviour
     public GameObject PassiveUI;
     public GameObject LevelUpUI;
 
-
     public int passivePoint = 10;
     public int bufPassivePoint;
     public Text PointText;
@@ -49,9 +48,10 @@ public class UI : MonoBehaviour
 
     public GameObject RightHand;
     public GameObject LeftHand;
-
     public GameObject LeftLaser;
 
+    public Image expGageImage;
+    public Image bossHpGageImage;
     
  
     

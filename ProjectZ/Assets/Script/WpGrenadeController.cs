@@ -16,7 +16,9 @@ public class WpGrenadeController : WeaponController
     public float power;
 
     //파워 슬라이더
-    public Slider powerSlider;
+    //public Slider powerSlider;
+    public Image powerGageFront;
+    public Image powerGageBack;
     //플레이어(수류탄 던지는 각도 계산)
     public GameObject player;
     //수류탄 프리팹
@@ -25,19 +27,26 @@ public class WpGrenadeController : WeaponController
 
     protected override void Start() { base.Start();  }
     protected override void Update(){ base.Update(); }
-    protected void OnEnable()   { powerSlider.value = 0; power = 0; powerSlider.gameObject.SetActive(false); }
-    protected void OnDisable()  { powerSlider.value = 0; power = 0; }
+    protected void OnEnable()   {
+        power = 0;
+        powerGageFront.rectTransform.sizeDelta = new Vector2(0, 25);
+        powerGageBack.gameObject.SetActive(false);
+    }
+    protected void OnDisable()  { 
+        powerGageFront.rectTransform.sizeDelta = new Vector2(0, 25); power = 0;
+    }
 
     public override void Attack(bool shootDown, bool shootUp)
     {
         if (shootDown && !shootUp)
         {
-            powerSlider.gameObject.SetActive(true);
+            powerGageBack.gameObject.SetActive(true);
+            
             GrenadeCharge();
         }
         else if (shootUp && !shootDown)
         {
-            powerSlider.gameObject.SetActive(false);
+            powerGageBack.gameObject.SetActive(false);
             GrenadeShoot();
         }
     }
@@ -75,8 +84,7 @@ public class WpGrenadeController : WeaponController
                 }
         }
         //파워슬라이더의 value값에 power를 대입받는다.
-        powerSlider.value = power;
-        //}
+        powerGageFront.rectTransform.sizeDelta = new Vector2(100f * power, 25);
     }
 
     public void GrenadeShoot()
@@ -92,7 +100,7 @@ public class WpGrenadeController : WeaponController
         //파워 초기화
         power = 0;
         //파워 슬라이더 초기화
-        powerSlider.value = power;
+        powerGageFront.rectTransform.sizeDelta = new Vector2(power, 25);
 
         curAmmo -= oneAmmo;
     }

@@ -39,6 +39,7 @@ public class OculesPlayer : Player
 
     //HP 슬라이더
     public Slider hpSlider;
+    public Image hpGageImage;
 
     //오른손
     public GameObject RightHand;
@@ -129,10 +130,14 @@ public class OculesPlayer : Player
         if (swapDown)
         {
             Vector2 vec = OVRInput.Get(OVRInput.Axis2D.SecondaryThumbstick);
-            
+            int i = 0;
             //조이스틱 이동 거리가 0.8 이상이면 교체X
             if (Vector2.Distance(vec, Vector2.zero) > 0.8)
-                ShowWp(ChoiceWp(OVRInput.Get(OVRInput.Axis2D.SecondaryThumbstick)));
+            {
+                i = ChoiceWp(OVRInput.Get(OVRInput.Axis2D.SecondaryThumbstick));
+
+                ShowWp(i);
+            }
             
             //testText.text = vec.ToString();
         }
@@ -169,6 +174,7 @@ public class OculesPlayer : Player
 
         //HP슬라이더에 HP잔여량 표시
         hpSlider.value = hpPer;
+        hpGageImage.rectTransform.sizeDelta = new Vector2(250 * hpPer, 50);
 
     }
 

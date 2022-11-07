@@ -10,6 +10,7 @@ public class WpUI : MonoBehaviour
     public float maxAmmo;
     public Text curAmmoText;
     public Text maxAmmoText;
+    public Image panelImage;
 
     // Start is called before the first frame update
     protected void Start()
