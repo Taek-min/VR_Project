@@ -13,6 +13,7 @@ public class UI : MonoBehaviour
     public GameObject OptionUI;
     public GameObject PassiveUI;
     public GameObject LevelUpUI;
+    public GameObject PlayerUI;
 
     public int passivePoint = 10;
     public int bufPassivePoint;
@@ -23,6 +24,7 @@ public class UI : MonoBehaviour
     public List<PassiveCheckList> psvCheckLists;
     public List<PassiveCheckList> LevelpsvCheckLists;
     public WeaponController[] wpControllerList;
+    public GameObject[] LvValImageList;
 
 
     public int speedCnt = 0;
@@ -73,6 +75,7 @@ public class UI : MonoBehaviour
         RightHand.SetActive(true);
         LeftHand.SetActive(true);
         LeftLaser.SetActive(false);
+        PlayerUI.SetActive(true);
     }
     public void OnClick_InOption()
     {

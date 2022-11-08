@@ -227,6 +227,7 @@ public class OculesPlayer : Player
         if (heart <= 0)
         {
             eventsys.GetComponent<UI>().LevelUpUI.SetActive(false);
+            eventsys.GetComponent<UI>().PlayerUI.SetActive(false);
             gameObj.SetActive(false);
             DeadUI.SetActive(true);
 

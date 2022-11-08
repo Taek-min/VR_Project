@@ -38,7 +38,7 @@ public class Boss : Enemy
         {
             float h = Input.GetAxisRaw("Horizontal");
             float v = Input.GetAxisRaw("Vertical");
-            lookVec = new Vector3(h + v, 0, v - h) * 5f;
+            lookVec = new Vector3(h + v, 0, v - h);
             transform.LookAt(Target.position + lookVec);
         }
         else

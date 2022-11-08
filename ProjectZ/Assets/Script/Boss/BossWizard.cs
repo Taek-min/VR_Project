@@ -22,6 +22,7 @@ public class BossWizard : Enemy
     public bool isLook;
 
     Vector3 lookVec; // 예측 
+    Vector3 tauntVec;
 
     void Awake()
     {
@@ -48,8 +49,14 @@ public class BossWizard : Enemy
         {
             float h = Input.GetAxisRaw("Horizontal");
             float v = Input.GetAxisRaw("Vertical");
-            lookVec = new Vector3(h + v, 0, v - h);
-            transform.LookAt(Target.position + lookVec);
+            //lookVec = new Vector3(h + v, 0, v - h);
+            lookVec = new Vector3(Target.position.x, 0, Target.position.z);
+            //transform.LookAt(Target.position + lookVec);
+            transform.LookAt(lookVec);
+        }
+        else
+        {
+            nav.SetDestination(tauntVec);
         }
     }
 
@@ -85,13 +92,13 @@ public class BossWizard : Enemy
     {
         anim.SetTrigger("doTornado");
         yield return new WaitForSeconds(1f);
-
+        isLook = false;
         GameObject instantTornado = Instantiate(tornado, tornadoPos.position, tornadoPos.rotation);
         BossTornado bossTornado = instantTornado.GetComponent<BossTornado>();
         bossTornado.target = Target;
 
         yield return new WaitForSeconds(2f);
-
+        isLook = true;
         StartCoroutine(Think());
     }
 
@@ -117,10 +124,11 @@ public class BossWizard : Enemy
     {
         anim.SetTrigger("doTornado");
         yield return new WaitForSeconds(1f);
-
+        isLook = false;
         Instantiate(wall, wallPos.position, wallPos.rotation);
 
         yield return new WaitForSeconds(2f);
+        isLook = true;
 
         StartCoroutine(Think());
     }
@@ -129,13 +137,15 @@ public class BossWizard : Enemy
     {
         anim.SetTrigger("doWall");
         yield return new WaitForSeconds(1f);
-        
+
+        isLook = false;
         GameObject instantArrow = Instantiate(arrow, arrowPos.position, arrowPos.rotation);
         BossArrow bossArrow = instantArrow.GetComponent<BossArrow>();
         bossArrow.target = Target;
 
         yield return new WaitForSeconds(2f);
-        
+
+        isLook = true;
         StartCoroutine(Think());
     }
 
