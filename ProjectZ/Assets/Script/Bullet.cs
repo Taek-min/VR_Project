@@ -31,9 +31,9 @@ public class Bullet : MonoBehaviour
     }
     private void Awake()
     {
-        UI UI = eventsys.GetComponent<UI>();
+        //UI UI = eventsys.GetComponent<UI>();
         //damage = 20;
-        Fire = 5 + UI.AddDamage;
+        //Fire = 5 + UI.AddDamage;
     }
 
     // Start is called before the first frame update
@@ -47,7 +47,7 @@ public class Bullet : MonoBehaviour
     void Update()
     {
 
-        UI UI = eventsys.GetComponent<UI>();
-        Fire = 1 + UI.AddDamage;
+        //UI UI = eventsys.GetComponent<UI>();
+        //Fire = 1 + UI.AddDamage;
     }
 }

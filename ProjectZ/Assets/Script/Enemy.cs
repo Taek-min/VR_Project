@@ -250,7 +250,7 @@ public class Enemy : MonoBehaviour
         anim.SetBool("isAttack", false);
 
     }
-    void FixedUpdate()
+    protected void FixedUpdate()
     {
         FreezeVelocity();
         Targeting();

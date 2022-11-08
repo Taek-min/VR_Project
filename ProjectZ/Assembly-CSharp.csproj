@@ -244,6 +244,11 @@
     <Compile Include="Assets\Oculus\SampleFramework\Usage\SpatialAnchor\Scripts\AnchorUIManager.cs" />
     <Compile Include="Assets\Oculus\SampleFramework\Usage\Passthrough\Scripts\SelectivePassthroughExperience.cs" />
     <Compile Include="Assets\Oculus\SampleFramework\Usage\HandsTrainExample\Scripts\TrackSegment.cs" />
+    <Compile Include="Assets\Script\Boss\BossTornado.cs" />
+    <Compile Include="Assets\Script\Boss\BossArrow.cs" />
+    <Compile Include="Assets\Script\Boss\BossWall.cs" />
+    <Compile Include="Assets\Script\Boss\BossLaser.cs" />
+    <Compile Include="Assets\Script\Boss\BossWizard.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\20 Logos PSD\Fonts\chunkfiveex\SIL Open Font License 1.1.txt" />
@@ -259,6 +264,7 @@
     <None Include="Assets\Oculus\SampleFramework\Usage\Passthrough\Materials\PassthroughLine.shader" />
     <None Include="Assets\Oculus\SampleFramework\Usage\Passthrough\Materials\BackgroundColor.shader" />
     <None Include="Assets\Oculus\SampleFramework\Usage\Passthrough\Materials\FatFingers.shader" />
+    <None Include="Assets\WizardPolyArt\Shader\PolyArtMaskTint.shader" />
     <None Include="Assets\Polygon Arsenal\Shaders\Standard\PolyIntense.Shader" />
     <None Include="Assets\Polygon Arsenal\Shaders\Standard\PolyRimLightSelective.shader" />
     <None Include="Assets\Oculus\SampleFramework\Usage\SceneManager\Shaders\InvisibleOccluder.shader" />
@@ -291,6 +297,7 @@
     <None Include="Assets\Oculus\SampleFramework\Usage\SceneManager\Shaders\StylizedOcclusions.shader" />
     <None Include="Assets\20 Logos PSD\Fonts\firasansheavy\SIL Open Font License.txt" />
     <None Include="Assets\Pixel Arsenal\Pixel Arsenal - Readme.txt" />
+    <None Include="Assets\WizardPolyArt\SRP\HowToTestSRPs.txt" />
     <None Include="Assets\Oculus\SampleFramework\Core\CustomHands\Shaders\Hands_02.shader" />
     <None Include="Assets\Oculus\SampleFramework\Usage\SceneManager\Shaders\GlassMask.shader" />
     <None Include="Assets\Oculus\SampleFramework\Core\CustomHands\Materials\Hands_DiffBump.shader" />
