@@ -18,6 +18,7 @@ public class ExpSystem : MonoBehaviour
     public int expNowVal = 0;   // 현재 경험치값
     public bool isMaxLv = false;
     public GameObject expFactory;
+    public GameObject BossGmObj;
 
     public Text[] testText;
 
@@ -96,6 +97,8 @@ public class ExpSystem : MonoBehaviour
             isMaxLv = true;
             ui.LvValImageList[10].SetActive(true);
             ui.expGageImage.rectTransform.sizeDelta = new Vector2(600, 50);
+            ui.BossHpUI.SetActive(true);
+            BossGmObj.SetActive(true);
             return;
         }
         else

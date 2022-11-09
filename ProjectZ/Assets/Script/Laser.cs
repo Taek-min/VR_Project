@@ -65,8 +65,8 @@ public class Laser : MonoBehaviour
     void HitTarget()
     {
         RaycastHit hit;
-        Ray ray = new Ray(transform.position, transform.forward);
-        if (!Physics.Raycast(ray, out hit, layerMask))
+        //Ray ray = new Ray(transform.position, transform.forward );
+        if (!Physics.Raycast(transform.position, transform.forward, out hit, 1000, layerMask))
         {
             if(hitObject != null)
             {

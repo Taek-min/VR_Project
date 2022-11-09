@@ -37,6 +37,7 @@ public class Enemy : MonoBehaviour
 
     //HP 슬라이더
     public Slider hpSlider;
+    public Image hpImage;
 
     public void EnemyUICam()
     { 
@@ -99,6 +100,7 @@ public class Enemy : MonoBehaviour
     Coroutine coA;
     IEnumerator OnDamage(Vector3 reactVec, bool isGrenade)//B46 피격로직
     {
+        Debug.Log("보스 타격함");
         foreach(Renderer mesh in meshs)
             mesh.material.color = Color.red;
 
@@ -263,7 +265,11 @@ public class Enemy : MonoBehaviour
 
 
         //HP슬라이더에 HP잔여량 표시
-        hpSlider.value = hpPer;
+        //hpSlider.value = hpPer;
+        if(hpImage != null)
+        {
+            hpImage.rectTransform.sizeDelta = new Vector2(600 * hpPer, 50);
+        }
 
     }
     // Update is called once per frame

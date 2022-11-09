@@ -97,7 +97,6 @@
 -define:ENABLE_MONO
 -define:NET_STANDARD_2_0
 -define:NET_STANDARD
--define:UNITY_PRO_LICENSE
 -define:ENABLE_CUSTOM_RENDER_TEXTURE
 -define:ENABLE_DIRECTOR
 -define:ENABLE_LOCALIZATION
@@ -461,6 +460,11 @@
 "Assets/Polygon Arsenal/Scripts/PolygonSoundSpawn.cs"
 "Assets/QuarterView 3D Action BE5/ReadMe/Scripts/ReadmeBE5.cs"
 "Assets/Script/Boss.cs"
+"Assets/Script/Boss/BossArrow.cs"
+"Assets/Script/Boss/BossLaser.cs"
+"Assets/Script/Boss/BossTornado.cs"
+"Assets/Script/Boss/BossWall.cs"
+"Assets/Script/Boss/BossWizard.cs"
 "Assets/Script/BossMissile.cs"
 "Assets/Script/BossRock.cs"
 "Assets/Script/Bullet.cs"
@@ -479,11 +483,14 @@
 "Assets/Script/InGameUI.cs"
 "Assets/Script/Item.cs"
 "Assets/Script/Laser.cs"
+"Assets/Script/MinimapCam.cs"
 "Assets/Script/Missile.cs"
+"Assets/Script/MyPixelArsenalProjectileScript.cs"
 "Assets/Script/MyPolygonProjectileScript.cs"
 "Assets/Script/OculesController.cs"
 "Assets/Script/OculesPlayer.cs"
 "Assets/Script/Orbit.cs"
+"Assets/Script/PassiveCheckList.cs"
 "Assets/Script/Player.cs"
 "Assets/Script/RangeOfAttack.cs"
 "Assets/Script/Spawn.cs"

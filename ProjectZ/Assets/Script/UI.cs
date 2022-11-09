@@ -14,6 +14,7 @@ public class UI : MonoBehaviour
     public GameObject PassiveUI;
     public GameObject LevelUpUI;
     public GameObject PlayerUI;
+    public GameObject BossHpUI;
 
     public int passivePoint = 10;
     public int bufPassivePoint;
@@ -54,6 +55,8 @@ public class UI : MonoBehaviour
 
     public Image expGageImage;
     public Image bossHpGageImage;
+    public Transform PlayerUIPos;
+    public Transform PlayerPos;
     
  
     
@@ -250,6 +253,7 @@ public class UI : MonoBehaviour
     public void On_LevelUp()
     {
         passivePoint++;
+        passivePoint++;
         LevelUpUI.SetActive(true);
         LeftLaser.SetActive(true);
         OnClick_PowerPointLevelReSet();
@@ -268,6 +272,11 @@ public class UI : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (PlayerUI == null || PlayerUIPos == null || PlayerPos == null) return;
+        PlayerUI.transform.position = new Vector3(PlayerUIPos.position.x, PlayerUIPos.position.y, PlayerUIPos.position.z);
+        //Vector3 UIPos = new Vector3(Camera.main.transform.position.x, 0, Camera.main.transform.position.z) - new Vector3(PlayerUI.transform.position.x, 0, PlayerUI.transform.position.z);
+        //Quaternion UIRot = Quaternion.LookRotation(PlayerUI.transform.position);
+        //PlayerUI.transform.rotation = UIRot;
+        PlayerUI.transform.LookAt(PlayerPos.position);
     }
 }

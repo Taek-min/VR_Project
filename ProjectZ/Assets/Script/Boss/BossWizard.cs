@@ -29,7 +29,7 @@ public class BossWizard : Enemy
         rigid = GetComponent<Rigidbody>();
         //capsuleCollider = GetComponent<CapsuleCollider>();
         boxCollider = GetComponent<BoxCollider>();
-        meshs = GetComponentsInChildren<MeshRenderer>();
+        meshs = GetComponentsInChildren<Renderer>();
         nav = GetComponent<NavMeshAgent>();
         anim = GetComponentInChildren<Animator>();
 
