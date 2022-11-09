@@ -39400,7 +39400,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e5583de0a935b47b7b069d1e4058747b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 0
+  damage: 10
   BulletTimer: 10
   isDestroy: 1
   isMelee: 0

@@ -14,7 +14,9 @@ public class UI : MonoBehaviour
     public GameObject PassiveUI;
     public GameObject LevelUpUI;
     public GameObject PlayerUI;
+    public GameObject FinishUI;
     public GameObject BossHpUI;
+    public GameObject Enemy;
 
     public int passivePoint = 10;
     public int bufPassivePoint;
@@ -267,6 +269,13 @@ public class UI : MonoBehaviour
         {
             wpController.UpdateAmmo(bufAddValArr[(int)PsvType.ammo] - AddAmmo);
         }
+    }
+    public void On_Finish()
+    {
+        Enemy.SetActive(false);
+        //PlayerUI.SetActive(false);
+        FinishUI.SetActive(true);
+        GameObject.FindObjectOfType<OculesPlayer>().isDamage = true;
     }
 
     // Update is called once per frame

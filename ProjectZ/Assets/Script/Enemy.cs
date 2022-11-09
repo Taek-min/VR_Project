@@ -100,9 +100,12 @@ public class Enemy : MonoBehaviour
     Coroutine coA;
     IEnumerator OnDamage(Vector3 reactVec, bool isGrenade)//B46 피격로직
     {
-        Debug.Log("보스 타격함");
-        foreach(Renderer mesh in meshs)
+        Debug.Log("mesh 길이 : " + meshs.Length.ToString());
+
+        foreach (Renderer mesh in meshs)
+        {
             mesh.material.color = Color.red;
+        }
 
         if (curHealth > 0)
         {
@@ -263,10 +266,9 @@ public class Enemy : MonoBehaviour
         //HP 백분율 계산
         hpPer = curHealth / maxHealth;
 
-
         //HP슬라이더에 HP잔여량 표시
         //hpSlider.value = hpPer;
-        if(hpImage != null)
+        if (hpImage != null)
         {
             hpImage.rectTransform.sizeDelta = new Vector2(600 * hpPer, 50);
         }

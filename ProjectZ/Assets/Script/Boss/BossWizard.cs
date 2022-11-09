@@ -42,6 +42,7 @@ public class BossWizard : Enemy
         if (isDead)
         {
             StopAllCoroutines();
+            eventsys.GetComponent<UI>().On_Finish();
             return;
         }
 
@@ -58,6 +59,7 @@ public class BossWizard : Enemy
         {
             nav.SetDestination(tauntVec);
         }
+        EnemyHPUpdate();
     }
 
 

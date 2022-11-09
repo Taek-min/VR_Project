@@ -3,6 +3,10 @@ Using template 'C:/Program Files/Unity/Hub/Editor/2021.2.16f1/Editor/Data/Playba
 android.permission.INTERNET was added because:
 	System.Net.Sockets was present in:
 		Oculus.VR-FeaturesChecked.txt
+		Photon3Unity3D-FeaturesChecked.txt
+		PhotonRealtime-FeaturesChecked.txt
+		websocket-sharp-FeaturesChecked.txt
+	Development player
 android.permission.RECORD_AUDIO, android.permission.MODIFY_AUDIO_SETTINGS, android.permission.BLUETOOTH, android.hardware.microphone were added because:
 	UnityEngine.Microphone was present in:
 		Facebook.WitAI-FeaturesChecked.txt

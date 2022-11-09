@@ -32,7 +32,7 @@ public class Player : MonoBehaviour
     protected bool isBorder;
     protected bool isDodgeCoolTime;
 
-    protected bool isDamage;
+    public bool isDamage;
     protected bool isMove;
     protected bool isMoveingShot;
 
@@ -426,7 +426,7 @@ public class Player : MonoBehaviour
             }
             Destroy(other.gameObject);
         }
-        if (other.tag == "EnemyBullet")
+        if (other.tag == "EnemyBullet" || other.tag == "BossBullet")
         {
             if (!isDamage)
             {
@@ -436,7 +436,7 @@ public class Player : MonoBehaviour
                 bool isBossAtk = other.name == "BossMeleeArea";
                 StartCoroutine(OnDamage(isBossAtk));
             }
-            if (other.GetComponent<Rigidbody>() != null)
+            if (other.GetComponent<Rigidbody>() != null || other.tag == "EnemyBullet")
             {
                 Destroy(other.gameObject);
             }
