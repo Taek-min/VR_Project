@@ -126,7 +126,6 @@ public class UI : MonoBehaviour
     public void OnClick_LevelPowerExit()
     {
         passivePoint = bufPassivePoint;
-
         speedCnt = bufCntArr[(int)PsvType.speed];
         damageCnt = bufCntArr[(int)PsvType.damage];
         hpCnt = bufCntArr[(int)PsvType.hp];
@@ -136,6 +135,7 @@ public class UI : MonoBehaviour
         AddDamage = bufAddValArr[(int)PsvType.damage];
         AddHP = bufAddValArr[(int)PsvType.hp];
         AddAmmo = bufAddValArr[(int)PsvType.ammo];
+        On_UpdatePsv();
 
         LevelUpUI.SetActive(false);
         LeftLaser.SetActive(false);
@@ -255,7 +255,6 @@ public class UI : MonoBehaviour
     public void On_LevelUp()
     {
         passivePoint++;
-        passivePoint++;
         LevelUpUI.SetActive(true);
         LeftLaser.SetActive(true);
         OnClick_PowerPointLevelReSet();
@@ -275,6 +274,7 @@ public class UI : MonoBehaviour
         Enemy.SetActive(false);
         //PlayerUI.SetActive(false);
         FinishUI.SetActive(true);
+        LeftLaser.SetActive(true);
         GameObject.FindObjectOfType<OculesPlayer>().isDamage = true;
     }
 

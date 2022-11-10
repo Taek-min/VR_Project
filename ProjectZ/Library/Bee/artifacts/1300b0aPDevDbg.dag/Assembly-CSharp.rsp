@@ -304,6 +304,7 @@
 -r:"C:/Program Files/Unity/Hub/Editor/2021.2.16f1/Editor/Data/PlaybackEngines/AndroidPlayer/Variations/mono/Managed/UnityEngine.WindModule.dll"
 -r:"C:/Program Files/Unity/Hub/Editor/2021.2.16f1/Editor/Data/PlaybackEngines/AndroidPlayer/Variations/mono/Managed/UnityEngine.XRModule.dll"
 -r:"Library/Bee/artifacts/1300b0aPDevDbg.dag/AssistantCoreSDKRuntime.ref.dll"
+-r:"Library/Bee/artifacts/1300b0aPDevDbg.dag/Boxophobic.Utils.Scripts.ref.dll"
 -r:"Library/Bee/artifacts/1300b0aPDevDbg.dag/Facebook.WitAI.ref.dll"
 -r:"Library/Bee/artifacts/1300b0aPDevDbg.dag/NavMeshComponents.ref.dll"
 -r:"Library/Bee/artifacts/1300b0aPDevDbg.dag/Oculus.AudioManager.ref.dll"

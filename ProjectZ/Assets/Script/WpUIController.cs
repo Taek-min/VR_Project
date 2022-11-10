@@ -34,7 +34,7 @@ public class WpUIController : MonoBehaviour
         //if (0 <= wpUIIndex && wpUIIndex > wpUI.Count)
         //{
         equipWpIndex = wpUIIndex;
-        wpUI[equipWpIndex].panelImage.color = new Color(83, 156, 53);
+        wpUI[equipWpIndex].panelImage.color = Color.green;
         //wpUI[equipWpIndex].gameObject.SetActive(true);
         //}
     }
