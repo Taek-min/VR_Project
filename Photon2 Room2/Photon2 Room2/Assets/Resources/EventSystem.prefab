@@ -1,0 +1,122 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &2689340416412782793
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2689340416412782794}
+  - component: {fileID: 2689340416412782795}
+  - component: {fileID: 2689340416412782792}
+  - component: {fileID: 2689340416412782797}
+  m_Layer: 0
+  m_Name: EventSystem
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2689340416412782794
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2689340416412782793}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2689340416412782795
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2689340416412782793}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76c392e42b5098c458856cdf6ecaaaa1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_FirstSelected: {fileID: 0}
+  m_sendNavigationEvents: 1
+  m_DragThreshold: 10
+--- !u!114 &2689340416412782792
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2689340416412782793}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f231c4fb786f3946a6b90b886c48677, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_HorizontalAxis: Horizontal
+  m_VerticalAxis: Vertical
+  m_SubmitButton: Submit
+  m_CancelButton: Cancel
+  m_InputActionsPerSecond: 10
+  m_RepeatDelay: 0.5
+  m_ForceModuleActive: 0
+--- !u!114 &2689340416412782797
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2689340416412782793}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e6e703effe03d384c828fd8594a96603, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MainGUI: {fileID: 0}
+  MainUI: {fileID: 0}
+  MainGame: {fileID: 0}
+  OptionUI: {fileID: 0}
+  PowerUI: {fileID: 0}
+  passivePoint: 10
+  PointText: {fileID: 0}
+  ammoimage:
+  - {fileID: 7624012465426064555, guid: cc0c39845475d504580948922a707dae, type: 3}
+  - {fileID: 5693221383622336331, guid: 876898393898b7c47a6e090e5814575c, type: 3}
+  - {fileID: 5688486258918481906, guid: 662e7d1f2e7015a49939e0b33d6ec401, type: 3}
+  - {fileID: 4100928497198463745, guid: 7a5c4998896bce143a64a69f5a854522, type: 3}
+  - {fileID: 2508086130222091812, guid: b7814f04372395f4e878b52a2bac90ea, type: 3}
+  Speedimage:
+  - {fileID: 5846710917397214631, guid: 28568d45fc760a342afa7dfcc58fb29c, type: 3}
+  - {fileID: 1492000661199520526, guid: 29c1e60af83936b4bb9c26fcc05e2aa2, type: 3}
+  - {fileID: 1902628278864724780, guid: b6e296ec98e61d147bcd3a0bf0ff124e, type: 3}
+  - {fileID: 8703940288384617789, guid: 021690c119082ff408a5a4f948ee6d97, type: 3}
+  - {fileID: 6693337803219087121, guid: 1ad291bda22def548970c92dfe9e6e38, type: 3}
+  damageimage:
+  - {fileID: 7646007442475267214, guid: 56e0659a63586c348b11f095fdc560e9, type: 3}
+  - {fileID: 388258102790459300, guid: f908c1e28871c6540a21a21de3e93d3b, type: 3}
+  - {fileID: 7504723198070306244, guid: df348658df0dc7c49b18f3830f3187f4, type: 3}
+  - {fileID: 5975475402885495049, guid: cf9372a4a74bfb74d9ea30c9f9ea6487, type: 3}
+  - {fileID: 4448277651958935153, guid: 449fafac99caced4d9ff6fb46178f3bf, type: 3}
+  HPimage:
+  - {fileID: 5362510787066190423, guid: bf2e80afcecb1d7478e633b63bff0116, type: 3}
+  - {fileID: 4877366381897108642, guid: 90edfb83c70a8f0478d495b0174aece8, type: 3}
+  - {fileID: 983998172767979839, guid: cb865c5a3ed92754cab3d875dcc58bd7, type: 3}
+  - {fileID: 1494143053868599474, guid: fd5b11e592485f44d9439da1cc899183, type: 3}
+  - {fileID: 6577693795084214249, guid: 00fca9e7965df7f4cb4d3cacee45294f, type: 3}
+  ammoCnt: 0
+  SpeedCnt: 0
+  damageCnt: 0
+  hpCnt: 0
+  Adddamage: 0
+  Addammo: 0
+  AddHP: 0
+  AddSpeed: 0
+  DeadUIObj: {fileID: 0}
